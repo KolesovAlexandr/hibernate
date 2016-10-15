@@ -20,7 +20,6 @@ public class App {
         StudentServiceImpl studentService = new StudentServiceImpl();
         Student student1 = new Student("Ivan Ivanov", "1201");
         Student student2 = new Student("Ivan Petroc", "1202");
-//        Student student3 = new Student("Petrov Petroc", "1203");
         Stipend stipend1 = new Stipend(1000);
         Stipend stipend2 = new Stipend(0);
         student1.setStipend(stipend1);
@@ -28,8 +27,7 @@ public class App {
         System.out.println("start save");
         studentService.save(student1);
         studentService.save(student2);
-//        studentService.save(student2);
-//        studentService.save(student3);
+        System.out.println("students without stipend");
         List<Student> students = studentService.findWihOutStipend();
         for (Student student : students) {
             System.out.println(student);
