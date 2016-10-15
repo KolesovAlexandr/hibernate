@@ -1,3 +1,5 @@
+# Created by .ignore support plugin (hsz.mobi)
+.idea/
+db/
 students-hibernate.iml
 target/
-/.idea/

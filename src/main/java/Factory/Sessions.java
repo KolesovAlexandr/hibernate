@@ -11,15 +11,18 @@ import org.hibernate.cfg.Configuration;
 public abstract class Sessions {
     private Session currentSession;
     private Transaction currentTransaction;
+    private SessionFactory currentSessionFactory;
 
     public Session openCurrentSession() {
-        currentSession = getSessionFactory().openSession();
+        currentSessionFactory = getSessionFactory();
+        currentSession = currentSessionFactory.openSession();
         currentTransaction = currentSession.beginTransaction();
         return currentSession;
     }
 
     public Session openCurrentSessionwithTransaction() {
-        currentSession = getSessionFactory().openSession();
+        currentSessionFactory = getSessionFactory();
+        currentSession = currentSessionFactory.openSession();
         currentTransaction = currentSession.beginTransaction();
         return currentSession;
     }
@@ -27,10 +30,12 @@ public abstract class Sessions {
     public void closeCurrentSessionwithTransaction() {
         currentTransaction.commit();
         currentSession.close();
+        currentSessionFactory.close();
     }
 
     public void closeCurrentSession() {
         currentSession.close();
+        currentSessionFactory.close();
     }
 
     private SessionFactory getSessionFactory() {
