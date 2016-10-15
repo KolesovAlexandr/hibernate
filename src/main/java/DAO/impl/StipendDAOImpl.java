@@ -1,7 +1,7 @@
 package DAO.impl;
 
 import DAO.StipendDAO;
-import Factory.Sessions;
+import Factory.AbstractSessionFactory;
 import entities.Stipend;
 
 import java.io.Serializable;
@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * Created by Aleksandr_Kolesov on 10/15/2016.
  */
-public class StipendDAOImpl extends Sessions implements StipendDAO<Stipend, Integer> {
+public class StipendDAOImpl extends AbstractSessionFactory implements StipendDAO<Stipend, Integer> {
     public Stipend save(Stipend entity) {
         Serializable save = getCurrentSession().save(entity);
         entity.setId((Integer) save);

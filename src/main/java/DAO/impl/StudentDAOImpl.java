@@ -1,7 +1,7 @@
 package DAO.impl;
 
 import DAO.StudentDAO;
-import Factory.Sessions;
+import Factory.AbstractSessionFactory;
 import entities.Student;
 
 import java.io.Serializable;
@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * Created by Aleksandr_Kolesov on 10/14/2016.
  */
-public class StudentDAOImpl extends Sessions implements StudentDAO<Student, Integer> {
+public class StudentDAOImpl extends AbstractSessionFactory implements StudentDAO<Student, Integer> {
 
 
     public StudentDAOImpl() {

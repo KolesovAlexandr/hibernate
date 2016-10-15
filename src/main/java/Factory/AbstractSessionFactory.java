@@ -8,7 +8,7 @@ import org.hibernate.cfg.Configuration;
 /**
  * Created by Aleksandr_Kolesov on 10/15/2016.
  */
-public abstract class Sessions {
+public abstract class AbstractSessionFactory {
     private Session currentSession;
     private Transaction currentTransaction;
     private SessionFactory currentSessionFactory;

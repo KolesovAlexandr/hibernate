@@ -1,6 +1,5 @@
 package DAO;
 
-import entities.Stipend;
 
 import java.io.Serializable;
 import java.util.List;
