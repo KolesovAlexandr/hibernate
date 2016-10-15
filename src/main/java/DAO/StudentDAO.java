@@ -6,6 +6,7 @@ import java.util.List;
 /**
  * Created by Aleksandr_Kolesov on 10/14/2016.
  */
+
 public interface StudentDAO<T, Id extends Serializable> {
 
     T save(T entity);

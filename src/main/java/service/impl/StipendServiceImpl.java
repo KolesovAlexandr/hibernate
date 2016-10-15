@@ -41,7 +41,6 @@ public class StipendServiceImpl implements StipendService<Stipend, Integer> {
         Stipend delete = StipendDAO.findById(id);
         StipendDAO.delete(delete);
         StipendDAO.closeCurrentSessionwithTransaction();
-
     }
 
     public List<Stipend> findAll() {

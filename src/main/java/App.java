@@ -11,7 +11,6 @@ import java.util.List;
 public class App {
     public static void main(String[] args) {
         StudentServiceImpl studentService = new StudentServiceImpl();
-
         Student student1 = new Student("Ivan Ivanov", "1201");
         Student student2 = new Student("Ivan Petroc", "1202");
 //        Student student3 = new Student("Petrov Petroc", "1203");

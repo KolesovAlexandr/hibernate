@@ -39,8 +39,6 @@ public class Student implements Serializable {
     }
 
     public Student(String name, String group) {
-
-
         this.name = name;
         this.group = group;
     }

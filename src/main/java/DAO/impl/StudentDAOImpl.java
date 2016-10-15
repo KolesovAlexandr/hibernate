@@ -14,7 +14,6 @@ public class StudentDAOImpl extends Sessions implements StudentDAO<Student, Inte
 
 
     public StudentDAOImpl() {
-
     }
 
 
@@ -31,12 +30,10 @@ public class StudentDAOImpl extends Sessions implements StudentDAO<Student, Inte
 
     public void update(Student entity) {
         getCurrentSession().update(entity);
-
     }
 
     public void delete(Student entity) {
         getCurrentSession().delete(entity);
-
     }
 
     public List<Student> findAll() {

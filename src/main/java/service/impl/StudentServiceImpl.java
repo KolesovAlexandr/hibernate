@@ -56,13 +56,11 @@ public class StudentServiceImpl implements StudentService<Student, Integer> {
         List<Student> students = studentDAO.findWihOutStipend();
         studentDAO.closeCurrentSession();
         return students;
-
     }
 
     public void deleteAll() {
         studentDAO.openCurrentSessionwithTransaction();
         studentDAO.deleteAll();
         studentDAO.closeCurrentSessionwithTransaction();
-
     }
 }

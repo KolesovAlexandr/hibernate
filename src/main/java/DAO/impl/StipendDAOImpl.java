@@ -24,12 +24,10 @@ public class StipendDAOImpl extends Sessions implements StipendDAO<Stipend, Inte
 
     public void update(Stipend entity) {
         getCurrentSession().update(entity);
-
     }
 
     public void delete(Stipend entity) {
         getCurrentSession().delete(entity);
-
     }
 
     public List<Stipend> findAll() {

@@ -28,8 +28,6 @@ public class Stipend {
     public Stipend() {
     }
 
-    ;
-
     public Student getStudent() {
         return student;
     }
