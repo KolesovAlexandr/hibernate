@@ -1,7 +1,9 @@
 import entities.Stipend;
 import entities.Student;
 import org.h2.tools.RunScript;
+import service.StipendService;
 import service.StudentService;
+import service.impl.StipendServiceImpl;
 import service.impl.StudentServiceImpl;
 
 import java.io.FileNotFoundException;
@@ -18,6 +20,7 @@ public class App {
     public static void main(String[] args) throws SQLException, ClassNotFoundException, FileNotFoundException {
         generateDB();
         StudentServiceImpl studentService = new StudentServiceImpl();
+        StipendServiceImpl stipendService = new StipendServiceImpl();
         Student student1 = new Student("Ivan Ivanov", "1201");
         Student student2 = new Student("Ivan Petroc", "1202");
         Stipend stipend1 = new Stipend(1000);
@@ -34,14 +37,13 @@ public class App {
         }
 
 
-
     }
 
     public static void generateDB() throws ClassNotFoundException, SQLException, FileNotFoundException {
         Class.forName("org.h2.Driver");
         Connection conn = DriverManager.
                 getConnection("jdbc:h2:./db/repository", "", "");
-        RunScript.execute(conn,new FileReader("D:\\IdeaProjects\\students-hibernate\\src\\main\\resources\\database.sql"));
+        RunScript.execute(conn, new FileReader("src/main/resources/database.sql"));
         conn.close();
     }
 
